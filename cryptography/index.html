@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cybersecurity Portfolio — Meitaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="scanline"></div>
+  <div class="grid-bg"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../../index.html" class="back">← Portfolio</a>
+      <div class="terminal-tag">
+        <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
+        <span class="t-title">security_portfolio.sh</span>
+      </div>
+      <div class="header-status"><span class="status-green"></span> SECURE</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="badge-dot"></span>CYBERSECURITY · ICT · CRYPTOGRAPHY</div>
+      <h1 class="hero-title">
+        <span class="line1">SECURITY</span>
+        <span class="line2">&amp; <em>CRYPTO</em></span>
+        <span class="line3">PORTFOLIO</span>
+      </h1>
+      <p class="hero-sub">Four real-world cybersecurity projects demonstrating encryption, network auditing, password analysis, and digital security awareness.</p>
+      <div class="hero-terminal">
+        <div class="terminal-header">
+          <span class="td td1"></span><span class="td td2"></span><span class="td td3"></span>
+          <span class="tname">meitaya@security:~$</span>
+        </div>
+        <div class="terminal-body">
+          <div class="tline"><span class="prompt">$</span> whoami</div>
+          <div class="tline output">meitaya — ICT student &amp; security researcher</div>
+          <div class="tline"><span class="prompt">$</span> ls projects/</div>
+          <div class="tline output">aes_rsa_demo/&nbsp;&nbsp;network_audit/&nbsp;&nbsp;pwd_analyzer/&nbsp;&nbsp;security_guide/</div>
+          <div class="tline"><span class="prompt">$</span> <span class="cursor-blink">█</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right-deco">
+      <div class="hex-grid">
+        <div class="hex h1"></div><div class="hex h2"></div><div class="hex h3"></div>
+        <div class="hex h4"></div><div class="hex h5"></div><div class="hex h6"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="projects-nav">
+    <a href="#encryption" class="pnav">01 Encryption</a>
+    <a href="#audit" class="pnav">02 Network Audit</a>
+    <a href="#password" class="pnav">03 Password Analyzer</a>
+    <a href="#awareness" class="pnav">04 Security Guide</a>
+  </div>
+
+  <main class="main">
+
+    <section class="project-section" id="encryption">
+      <div class="project-header reveal">
+        <div class="project-number">01</div>
+        <div class="project-title-block">
+          <span class="project-tag">Cryptography</span>
+          <h2>AES-256 &amp; RSA Encryption Demo</h2>
+          <p>A hands-on implementation of symmetric and asymmetric encryption using OpenSSL, modelled on a real banking security scenario at Equity Bank Kenya.</p>
+        </div>
+        <div class="project-meta-block">
+          <div class="meta-item"><span>Tool</span>OpenSSL</div>
+          <div class="meta-item"><span>Language</span>Bash / Terminal</div>
+          <div class="meta-item"><span>Platform</span>Windows / Linux</div>
+          <div class="meta-item"><span>Status</span><em class="green">Completed</em></div>
+        </div>
+      </div>
+      <div class="crypto-demo reveal">
+        <div class="crypto-panel">
+          <div class="panel-label">AES-256 Encryption Flow</div>
+          <div class="crypto-flow">
+            <div class="cf-box cf-input"><div class="cf-icon">📄</div><div class="cf-text"><strong>Plaintext</strong><span>Customer bank data</span></div></div>
+            <div class="cf-arrow"><div class="cf-arrow-line"></div><div class="cf-key-badge">🔑 AES-256 Key</div></div>
+            <div class="cf-box cf-output"><div class="cf-icon">🔒</div><div class="cf-text"><strong>Ciphertext</strong><span>Encrypted output</span></div></div>
+          </div>
+          <div class="code-block">
+            <div class="code-line"><span class="c-comment"># Generate AES-256 encrypted file</span></div>
+            <div class="code-line"><span class="c-cmd">openssl</span> enc -aes-256-cbc -salt \</div>
+            <div class="code-line">&nbsp;&nbsp;-in customer_data.txt \</div>
+            <div class="code-line">&nbsp;&nbsp;-out encrypted.bin \</div>
+            <div class="code-line">&nbsp;&nbsp;-k <span class="c-str">EquityBank@2026#Secure</span></div>
+            <div class="code-line mt"><span class="c-green">✓ Encryption successful — 256-bit key applied</span></div>
+          </div>
+        </div>
+        <div class="crypto-panel">
+          <div class="panel-label">RSA Key Generation Steps</div>
+          <div class="rsa-flow">
+            <div class="rsa-step"><div class="rsa-num">1</div><div class="rsa-info"><strong>Generate Private Key</strong><span>openssl genrsa -out private.pem 2048</span></div></div>
+            <div class="rsa-step"><div class="rsa-num">2</div><div class="rsa-info"><strong>Extract Public Key</strong><span>openssl rsa -pubout -in private.pem</span></div></div>
+            <div class="rsa-step"><div class="rsa-num">3</div><div class="rsa-info"><strong>Encrypt with Public Key</strong><span>openssl rsautl -encrypt -pubin</span></div></div>
+            <div class="rsa-step"><div class="rsa-num">4</div><div class="rsa-info"><strong>Decrypt with Private Key</strong><span>openssl rsautl -decrypt -inkey private.pem</span></div></div>
+          </div>
+          <div class="key-display">
+            <div class="key-label">Sample Public Key (truncated)</div>
+            <div class="key-value">-----BEGIN PUBLIC KEY-----<br/>MIIBIjANBgkqhkiG9w0BAQEFAAOC<br/>AQ8AMIIBCgKCAQEA3v7+Zk9mXs...<br/>-----END PUBLIC KEY-----</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-outcomes reveal">
+        <div class="outcome"><span class="o-icon">🔐</span><strong>AES-256</strong><span>Military-grade symmetric encryption applied to sensitive data files</span></div>
+        <div class="outcome"><span class="o-icon">🗝️</span><strong>RSA 2048-bit</strong><span>Asymmetric key pair generated and used for secure key exchange</span></div>
+        <div class="outcome"><span class="o-icon">🏦</span><strong>Real Scenario</strong><span>Modelled on Equity Bank Kenya's internal data protection requirements</span></div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="project-section" id="audit">
+      <div class="project-header reveal">
+        <div class="project-number">02</div>
+        <div class="project-title-block">
+          <span class="project-tag">Network Security</span>
+          <h2>Network Security Audit Report</h2>
+          <p>A structured security audit of a simulated small business network — identifying vulnerabilities, assessing risks, and recommending mitigations.</p>
+        </div>
+        <div class="project-meta-block">
+          <div class="meta-item"><span>Scope</span>LAN / Wi-Fi</div>
+          <div class="meta-item"><span>Tools</span>Nmap · Wireshark</div>
+          <div class="meta-item"><span>Method</span>Manual + Tool-based</div>
+          <div class="meta-item"><span>Status</span><em class="green">Completed</em></div>
+        </div>
+      </div>
+      <div class="audit-report reveal">
+        <div class="report-header">
+          <div class="report-title-row">
+            <div>
+              <div class="report-label">SECURITY AUDIT REPORT</div>
+              <div class="report-org">Simulated Business Network — MKU Lab Environment</div>
+            </div>
+            <div class="report-risk-badge">RISK: MEDIUM</div>
+          </div>
+        </div>
+        <div class="findings-table">
+          <div class="ft-header"><span>Finding</span><span>Severity</span><span>Status</span><span>Recommendation</span></div>
+          <div class="ft-row"><span>Open Telnet Port (23)</span><span class="sev critical">CRITICAL</span><span class="status-found">Found</span><span>Disable Telnet, use SSH</span></div>
+          <div class="ft-row"><span>Weak Wi-Fi Password</span><span class="sev high">HIGH</span><span class="status-found">Found</span><span>Enforce WPA3 + strong passphrase</span></div>
+          <div class="ft-row"><span>Unencrypted HTTP Traffic</span><span class="sev high">HIGH</span><span class="status-found">Found</span><span>Force HTTPS with SSL certificate</span></div>
+          <div class="ft-row"><span>No Firewall Rules Set</span><span class="sev medium">MEDIUM</span><span class="status-found">Found</span><span>Configure iptables / Windows Firewall</span></div>
+          <div class="ft-row"><span>Default Router Credentials</span><span class="sev medium">MEDIUM</span><span class="status-found">Found</span><span>Change admin username and password</span></div>
+          <div class="ft-row"><span>SSH Port 22 (standard)</span><span class="sev low">LOW</span><span class="status-ok">Noted</span><span>Change SSH to non-standard port</span></div>
+        </div>
+        <div class="audit-summary">
+          <div class="as-item"><span class="as-n critical-text">2</span><span>Critical</span></div>
+          <div class="as-item"><span class="as-n high-text">2</span><span>High</span></div>
+          <div class="as-item"><span class="as-n medium-text">2</span><span>Medium</span></div>
+          <div class="as-item"><span class="as-n low-text">1</span><span>Low</span></div>
+          <div class="as-item"><span class="as-n green-text">6</span><span>Total</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="project-section" id="password">
+      <div class="project-header reveal">
+        <div class="project-number">03</div>
+        <div class="project-title-block">
+          <span class="project-tag">Interactive Tool</span>
+          <h2>Password Strength Analyzer</h2>
+          <p>A live JavaScript tool that analyses password strength in real time — checking length, complexity, character variety, and common patterns.</p>
+        </div>
+        <div class="project-meta-block">
+          <div class="meta-item"><span>Language</span>JavaScript</div>
+          <div class="meta-item"><span>Type</span>Interactive Tool</div>
+          <div class="meta-item"><span>Works</span>In Browser</div>
+          <div class="meta-item"><span>Status</span><em class="green">Live Demo</em></div>
+        </div>
+      </div>
+      <div class="pwd-demo reveal">
+        <div class="pwd-tool">
+          <div class="pwd-tool-header">
+            <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
+            <span class="tname">password_analyzer.js — Live Demo</span>
+          </div>
+          <div class="pwd-tool-body">
+            <label class="pwd-label">Enter a password to analyse:</label>
+            <div class="pwd-input-wrap">
+              <input type="password" id="pwdInput" placeholder="Type a password..." class="pwd-input" autocomplete="off"/>
+              <button class="pwd-toggle" id="pwdToggle" type="button">👁</button>
+            </div>
+            <div class="pwd-strength-bar">
+              <div class="psb-track"><div class="psb-fill" id="psbFill"></div></div>
+              <span class="psb-label" id="psbLabel">—</span>
+            </div>
+            <div class="pwd-score-row">
+              <div class="pwd-score-box" id="scoreBox">
+                <span class="score-num" id="scoreNum">0</span>
+                <span class="score-label">/ 100</span>
+              </div>
+              <div class="pwd-checks">
+                <div class="pwd-check" id="chkLen">✗ At least 8 characters</div>
+                <div class="pwd-check" id="chkUpper">✗ Uppercase letter</div>
+                <div class="pwd-check" id="chkLower">✗ Lowercase letter</div>
+                <div class="pwd-check" id="chkNum">✗ Contains number</div>
+                <div class="pwd-check" id="chkSymbol">✗ Special character (!@#$...)</div>
+                <div class="pwd-check" id="chkLen12">✗ 12+ characters (recommended)</div>
+              </div>
+            </div>
+            <div class="pwd-tip" id="pwdTip">Start typing to analyse your password.</div>
+          </div>
+        </div>
+        <div class="pwd-info">
+          <h3>How It Works</h3>
+          <p>The analyzer checks 6 security criteria in real time and calculates a score from 0 to 100. It also warns when a common weak password is detected.</p>
+          <div class="pwd-criteria">
+            <div class="pc-item"><span class="pc-score">+15</span><span>Minimum 8 characters</span></div>
+            <div class="pc-item"><span class="pc-score">+15</span><span>Uppercase letters (A–Z)</span></div>
+            <div class="pc-item"><span class="pc-score">+15</span><span>Lowercase letters (a–z)</span></div>
+            <div class="pc-item"><span class="pc-score">+20</span><span>Numbers (0–9)</span></div>
+            <div class="pc-item"><span class="pc-score">+20</span><span>Special characters</span></div>
+            <div class="pc-item"><span class="pc-score">+15</span><span>12+ character length</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="project-section" id="awareness">
+      <div class="project-header reveal">
+        <div class="project-number">04</div>
+        <div class="project-title-block">
+          <span class="project-tag">Security Awareness</span>
+          <h2>Cybersecurity Awareness Guide</h2>
+          <p>A practical guide covering the most common cyber threats and exactly how individuals and businesses can protect themselves online.</p>
+        </div>
+        <div class="project-meta-block">
+          <div class="meta-item"><span>Audience</span>General / SMEs</div>
+          <div class="meta-item"><span>Format</span>Interactive Guide</div>
+          <div class="meta-item"><span>Topics</span>6 Threat Areas</div>
+          <div class="meta-item"><span>Status</span><em class="green">Complete</em></div>
+        </div>
+      </div>
+      <div class="awareness-grid reveal">
+        <div class="threat-card"><div class="tc-icon">🎣</div><div class="tc-body"><strong>Phishing Attacks</strong><p>Fake emails that trick you into revealing passwords or clicking malicious links.</p><div class="tc-protect"><span class="protect-label">Protection:</span> Verify sender addresses. Never click suspicious links. Use email filters.</div></div><div class="tc-risk high-bg">HIGH RISK</div></div>
+        <div class="threat-card"><div class="tc-icon">🦠</div><div class="tc-body"><strong>Malware &amp; Ransomware</strong><p>Malicious software that encrypts your files and demands payment to restore access.</p><div class="tc-protect"><span class="protect-label">Protection:</span> Keep software updated. Use antivirus. Back up files regularly.</div></div><div class="tc-risk high-bg">HIGH RISK</div></div>
+        <div class="threat-card"><div class="tc-icon">🔑</div><div class="tc-body"><strong>Weak Passwords</strong><p>Passwords that are too short, reused, or predictable — easily cracked by brute force.</p><div class="tc-protect"><span class="protect-label">Protection:</span> Use 12+ character passwords. Enable 2FA. Use a password manager.</div></div><div class="tc-risk medium-bg">MEDIUM RISK</div></div>
+        <div class="threat-card"><div class="tc-icon">📡</div><div class="tc-body"><strong>Unsecured Wi-Fi</strong><p>Public or poorly configured networks that allow attackers to intercept your traffic.</p><div class="tc-protect"><span class="protect-label">Protection:</span> Use VPN on public Wi-Fi. Avoid banking on public networks.</div></div><div class="tc-risk medium-bg">MEDIUM RISK</div></div>
+        <div class="threat-card"><div class="tc-icon">👤</div><div class="tc-body"><strong>Social Engineering</strong><p>Manipulating people into revealing confidential information through deception.</p><div class="tc-protect"><span class="protect-label">Protection:</span> Verify identities before sharing info. Train staff on awareness.</div></div><div class="tc-risk high-bg">HIGH RISK</div></div>
+        <div class="threat-card"><div class="tc-icon">💾</div><div class="tc-body"><strong>Data Breaches</strong><p>Unauthorised access to databases exposing personal and financial information.</p><div class="tc-protect"><span class="protect-label">Protection:</span> Encrypt stored data. Use access controls. Monitor system logs.</div></div><div class="tc-risk critical-bg">CRITICAL</div></div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-terminal-tag"><span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span> contact.sh</div>
+      <h2>Need Security Help?</h2>
+      <p>Available for cybersecurity consulting, IT support, and security awareness training for individuals and small businesses in Kenya.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/254000000000" target="_blank" class="btn-main">💬 WhatsApp Me</a>
+        <a href="../../index.html" class="btn-ghost">← Back to Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="footer-mono">meitaya@security:~$</span>
+    <span>© 2026 Meitaya — Kenya 🇰🇪</span>
+    <a href="../../index.html">exit</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
